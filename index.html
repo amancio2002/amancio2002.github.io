@@ -14,7 +14,7 @@
   <meta property="og:title" content="Amancio’s Athletics | Hawkins, TX">
   <meta property="og:description" content="Fun, expert-led group classes in Hawkins, TX. Class times: 6:00am, 8:15am, 5:30pm, 6:30pm.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="Photo1.jpg">
+  <meta property="og:image" content="Photo2.jpg">
   <meta name="theme-color" content="#001f54">
 
   <!-- Local business schema -->
@@ -53,7 +53,7 @@
   <header class="site-header" id="home">
     <div class="container nav">
       <a class="brand" href="#home" aria-label="Amancio’s Athletics Home">
-        <img src="Photo3.jpg" alt="Amancio’s Athletics Logo" class="logo">
+        <img src="Photo3.jpg" alt="Amancio’s Athletics logo" class="logo">
         <span class="brand-text">Amancio’s Athletics</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" id="navToggle">
@@ -72,15 +72,13 @@
   </header>
 
   <main id="main">
-    <!-- Hero (Photo1) -->
+    <!-- Hero -->
     <section class="hero" data-parallax>
       <div class="bg-shape" aria-hidden="true"></div>
       <div class="container hero-inner">
         <div class="hero-copy" data-reveal>
           <h1>Fun, expert-led group classes in Hawkins, TX</h1>
-          <p class="tagline">
-            Amancio’s Athletics provides fun, expert-led group classes that inspire, challenge, and build community.
-          </p>
+          <p class="tagline">Amancio’s Athletics provides fun, expert-led group classes that inspire, challenge, and build community.</p>
           <div class="hero-ctas">
             <a class="btn" href="tel:+19037380589">Call or Text (903) 738-0589</a>
             <a class="btn btn-outline" href="#classes">View Class Times</a>
@@ -91,8 +89,6 @@
             <li>Coaching that cares</li>
           </ul>
         </div>
-
-        <!-- Photo1 as the main visual -->
         <figure class="hero-media" aria-label="Community at Amancio’s Athletics" data-reveal>
           <img class="hero-image" src="Photo1.jpg" alt="Group photo at Amancio’s Athletics">
         </figure>
@@ -132,7 +128,7 @@
       </div>
     </section>
 
-    <!-- Community Reel (Video placed smartly) -->
+    <!-- Community Reel -->
     <section id="reel" class="section alt" data-reveal>
       <div class="container">
         <header class="section-head">
@@ -142,7 +138,7 @@
 
         <div class="video-card">
           <div class="video-wrap">
-            <video class="hero-video" controls playsinline preload="metadata" poster="Photo3.jpg">
+            <video class="hero-video" controls playsinline preload="metadata" poster="Photo2.jpg">
               <source src="Video1.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -223,10 +219,8 @@
     </div>
   </footer>
 
-  <!-- Back to top -->
   <button id="backToTop" aria-label="Back to top">↑</button>
 
-  <!-- Scripts -->
   <script>
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('nav-links');
@@ -240,10 +234,7 @@
       a.addEventListener('click', e=>{
         const id = a.getAttribute('href').slice(1);
         const el = document.getElementById(id);
-        if(el){
-          e.preventDefault();
-          el.scrollIntoView({behavior: 'smooth'});
-        }
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior: 'smooth'}); }
       });
     });
 
@@ -283,8 +274,7 @@
         const cy = rect.top + rect.height / 2;
         const dx = (e.clientX - cx) / rect.width;
         const dy = (e.clientY - cy) / rect.height;
-        targetX = dx * 10;
-        targetY = dy * 10;
+        targetX = dx * 10; targetY = dy * 10;
         if (!rafId) rafId = requestAnimationFrame(animate);
       }
       window.addEventListener('mousemove', setTarget, {passive:true});
@@ -299,3 +289,4 @@
   </script>
 </body>
 </html>
+
