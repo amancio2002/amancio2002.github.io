@@ -13,13 +13,19 @@ body{
 a{color:var(--white); text-decoration:none}
 img{max-width:100%; display:block}
 
+/* utilities */
+.no-wrap{white-space:nowrap}
+
 .container{width:min(1100px,92%); margin:0 auto}
 .section{padding:56px 0}
 .section.alt{background:var(--navy-2)}
 
 /* top bar */
 .topbar{font-size:.95rem; border-bottom:1px solid rgba(255,255,255,.12); background:var(--navy-3)}
-.topbar-inner{display:flex; gap:12px; align-items:center; justify-content:flex-end; padding:8px 0}
+.topbar-inner{
+  display:flex; gap:12px; align-items:center; justify-content:flex-end; padding:8px 0;
+  flex-wrap:nowrap; white-space:nowrap; overflow:auto; -webkit-overflow-scrolling:touch
+}
 .topbar .dot{width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,.65); display:inline-block}
 
 /* header/nav */
@@ -45,7 +51,10 @@ img{max-width:100%; display:block}
 .hero-image{width:100%; max-width:520px; border-radius:14px; box-shadow:0 14px 36px rgba(0,0,0,.45)}
 
 /* buttons */
-.btn{background:var(--accent); color:var(--white); padding:10px 18px; border:none; border-radius:10px; font-weight:800; cursor:pointer}
+.btn{
+  background:var(--accent); color:var(--white); padding:10px 18px; border:none; border-radius:10px; font-weight:800; cursor:pointer;
+  white-space:nowrap
+}
 .btn:hover{background:var(--accent-2)}
 .btn-outline{background:transparent; color:var(--white); border:2px solid var(--white)}
 .btn-outline:hover{background:var(--navy-2); border-color:var(--accent-2); color:var(--white)}
@@ -98,4 +107,10 @@ img{max-width:100%; display:block}
   .nav-toggle{display:inline-flex; background:transparent; border:0; color:var(--white)}
   .nav-links{position:absolute; inset:60px 0 auto 0; display:none; flex-direction:column; gap:10px; padding:12px; background:var(--navy); border-top:1px solid rgba(255,255,255,.12)}
   .nav-links.open{display:flex}
+}
+
+/* tiny phones tweak */
+@media (max-width:420px){
+  .topbar{font-size:.9rem}
+  .btn{padding:10px 14px}
 }
