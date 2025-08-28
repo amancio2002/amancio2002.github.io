@@ -6,37 +6,27 @@
 }
 *{box-sizing:border-box}
 html,body{margin:0}
-html{overflow-x:hidden}
 body{
   font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
   color:var(--ink); background:#0a0a0a; min-height:100dvh;
-  -webkit-text-size-adjust:100%;
 }
 a{color:var(--white); text-decoration:none}
 img{max-width:100%; display:block}
 
-/* utilities */
-.nowrap{white-space:nowrap}
-.shrink{font-size:clamp(.9rem, 2.8vw, 1rem)}
 .container{width:min(1100px,92%); margin:0 auto}
 .section{padding:56px 0}
 .section.alt{background:var(--navy-2)}
 
 /* top bar */
-.topbar{font-size:1rem; border-bottom:1px solid rgba(255,255,255,.12); background:var(--navy-3)}
-.topbar-inner{display:flex; align-items:center; justify-content:flex-end; padding:8px 0}
-.topbar-line{
-  display:flex; align-items:center; gap:10px;
-  flex-wrap:nowrap; width:100%; justify-content:flex-end;
-}
-.sep{opacity:.7}
-.topbar .dot{display:none}
+.topbar{font-size:.95rem; border-bottom:1px solid rgba(255,255,255,.12); background:var(--navy-3)}
+.topbar-inner{display:flex; gap:12px; align-items:center; justify-content:flex-end; padding:8px 0}
+.topbar .dot{width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,.65); display:inline-block}
 
 /* header/nav */
 .site-header{position:sticky; top:0; z-index:50; background:var(--navy); transition:box-shadow .25s, background-color .25s; border-bottom:1px solid rgba(255,255,255,.1)}
 .site-header.scrolled{box-shadow:0 8px 28px rgba(0,0,0,.35)}
 .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
-.brand{display:flex; align-items:center; gap:10px; min-width:0}
+.brand{display:flex; align-items:center; gap:10px}
 .logo{width:36px; height:36px; border-radius:8px; object-fit:cover; box-shadow:0 0 0 2px rgba(255,255,255,.15)}
 .brand-text{font-weight:800; letter-spacing:.2px; color:var(--white)}
 .nav-links{display:flex; gap:18px; align-items:center}
@@ -48,16 +38,14 @@ img{max-width:100%; display:block}
 .hero{position:relative; overflow:hidden}
 .bg-shape{position:absolute; inset:-20% -10% auto -10%; height:60vh; background:radial-gradient(560px 300px at 22% 28%, rgba(46,91,168,.3), transparent 65%); pointer-events:none}
 .hero-inner{display:grid; grid-template-columns:1.1fr .9fr; gap:24px; align-items:center; min-height:62vh; padding:24px 0 8px}
-.hero h1{font-size:clamp(26px,5vw,44px); margin:0 0 10px}
+.hero h1{font-size:clamp(28px,4vw,44px); margin:0 0 10px}
 .tagline{font-size:1.05rem; color:var(--muted); max-width:52ch}
-.hero-ctas{display:flex; gap:12px; margin:16px 0 8px; flex-wrap:wrap}
+.hero-ctas{display:flex; gap:12px; margin:16px 0 8px}
 .hero-facts{display:flex; gap:14px; flex-wrap:wrap; padding:0; margin:10px 0 0; list-style:none}
 .hero-image{width:100%; max-width:520px; border-radius:14px; box-shadow:0 14px 36px rgba(0,0,0,.45)}
 
 /* buttons */
-.btn{
-  background:var(--accent); color:var(--white); padding:10px 18px; border:none; border-radius:10px; font-weight:800; cursor:pointer;
-}
+.btn{background:var(--accent); color:var(--white); padding:10px 18px; border:none; border-radius:10px; font-weight:800; cursor:pointer}
 .btn:hover{background:var(--accent-2)}
 .btn-outline{background:transparent; color:var(--white); border:2px solid var(--white)}
 .btn-outline:hover{background:var(--navy-2); border-color:var(--accent-2); color:var(--white)}
@@ -110,21 +98,4 @@ img{max-width:100%; display:block}
   .nav-toggle{display:inline-flex; background:transparent; border:0; color:var(--white)}
   .nav-links{position:absolute; inset:60px 0 auto 0; display:none; flex-direction:column; gap:10px; padding:12px; background:var(--navy); border-top:1px solid rgba(255,255,255,.12)}
   .nav-links.open{display:flex}
-}
-
-/* phones */
-@media (max-width:600px){
-  .topbar{font-size:.95rem}
-  .topbar-line{gap:8px}
-  .btn{padding:10px 14px; font-size:clamp(.95rem, 3.8vw, 1rem)}
-  .brand-text{font-size:clamp(1rem, 4.6vw, 1.125rem)}
-  .tagline{font-size:clamp(.98rem, 3.8vw, 1.05rem)}
-}
-
-/* tiny phones */
-@media (max-width:420px){
-  .topbar{font-size:.9rem}
-  .topbar-line{gap:6px}
-  .sep{display:none} /* 아주 작은 화면에서는 구분점 제거해 길이 확보 */
-  .btn{padding:9px 12px}
 }
