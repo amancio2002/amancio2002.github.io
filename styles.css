@@ -6,12 +6,17 @@
 }
 *{box-sizing:border-box}
 html,body{margin:0}
+html{overflow-x:hidden} /* 모바일 우측 잘림 방지 */
 body{
   font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
   color:var(--ink); background:#0a0a0a; min-height:100dvh;
+  -webkit-text-size-adjust:100%;
 }
 a{color:var(--white); text-decoration:none}
 img{max-width:100%; display:block}
+
+/* utilities */
+.nowrap{white-space:nowrap}
 
 .container{width:min(1100px,92%); margin:0 auto}
 .section{padding:56px 0}
@@ -19,7 +24,10 @@ img{max-width:100%; display:block}
 
 /* top bar */
 .topbar{font-size:.95rem; border-bottom:1px solid rgba(255,255,255,.12); background:var(--navy-3)}
-.topbar-inner{display:flex; gap:12px; align-items:center; justify-content:flex-end; padding:8px 0}
+.topbar-inner{
+  display:flex; gap:12px; align-items:center; justify-content:flex-end; padding:8px 0;
+  flex-wrap:nowrap; white-space:nowrap; overflow:auto; -webkit-overflow-scrolling:touch;
+}
 .topbar .dot{width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,.65); display:inline-block}
 
 /* header/nav */
@@ -40,7 +48,7 @@ img{max-width:100%; display:block}
 .hero-inner{display:grid; grid-template-columns:1.1fr .9fr; gap:24px; align-items:center; min-height:62vh; padding:24px 0 8px}
 .hero h1{font-size:clamp(28px,4vw,44px); margin:0 0 10px}
 .tagline{font-size:1.05rem; color:var(--muted); max-width:52ch}
-.hero-ctas{display:flex; gap:12px; margin:16px 0 8px}
+.hero-ctas{display:flex; gap:12px; margin:16px 0 8px; flex-wrap:wrap}
 .hero-facts{display:flex; gap:14px; flex-wrap:wrap; padding:0; margin:10px 0 0; list-style:none}
 .hero-image{width:100%; max-width:520px; border-radius:14px; box-shadow:0 14px 36px rgba(0,0,0,.45)}
 
@@ -99,3 +107,17 @@ img{max-width:100%; display:block}
   .nav-links{position:absolute; inset:60px 0 auto 0; display:none; flex-direction:column; gap:10px; padding:12px; background:var(--navy); border-top:1px solid rgba(255,255,255,.12)}
   .nav-links.open{display:flex}
 }
+
+/* phones */
+@media (max-width:600px){
+  .topbar-inner{gap:10px}
+  .btn{padding:10px 14px}
+}
+
+/* tiny phones */
+@media (max-width:420px){
+  .topbar{font-size:.9rem}
+  .topbar-inner{gap:8px}
+  .btn{padding:9px 12px}
+}
+
